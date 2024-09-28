@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="input-container">
+      <input type="text" placeholder="Enter city" id="input">
+      <button onclick="show()">Show Weather</button>
+  </div>
+  <div class="weather-app">
+    <div class="weather-main">
+      <h2 id="location">City, Country</h2>
+      <div id="main-weather">
+        <span id="icon"></span>
+        <span id="temperature"> -- °C</span>
+        <span id="description">Clear Sky</span>
+      </div>
+      
+      <div id="details">
+        <span id="wind">Wind: -- km/h</span>
+        <span id="humidity">Humidity: --%</span>
+        <span id="pressure">Pressure: -- mb</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
