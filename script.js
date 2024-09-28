@@ -1,17 +1,10 @@
-function show() {
+async function show() {
     const city = document.getElementById("input").value;
     const apiKey = '466ddaa21a8de191e9f608bd11a56acb';
     const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-
-    fetchWeather(apiURL);
-    document.getElementById("input").value=""
-  }
-
-  async function fetchWeather(apiURL) {
     try {
       const response = await fetch(apiURL);
       const data = await response.json();
-
       if (data.cod === "404") {
         alert("City not found. Please enter a valid city name.");
         return;
@@ -45,7 +38,13 @@ function show() {
         "clear": "☀️",
         "partly cloudy": "🌤️"
       };
-      
+      // console.log(data.name)
+      // console.log(data.sys.country)
+      // console.log(data.weather[0].description)
+      // console.log(data.main.temp)
+      // console.log(data.wind.speed)
+      // console.log(data.main.humidity)
+      // console.log(data.main.pressure)
         
       
       
@@ -60,4 +59,5 @@ function show() {
     } catch (error) {
       alert('Unable to fetch weather data. Please try again later.');
     }
+    document.getElementById("input").value=""
   }
