@@ -6,22 +6,38 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: #4d92cf;
+  background-image: url('weather.jpg'); /* Background image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  color: #201919;
 }
 
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Glassmorphism for the weather box */
 .weather-app {
-  background: #9ed2d2;
+  background: rgba(255, 255, 255, 0.3); /* Semi-transparent white */
   color: #201919;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 20px;
   max-width: 400px;
   width: 100%;
   text-align: center;
-  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37); /* Frosted glass shadow */
+  backdrop-filter: blur(10px); /* Frosted effect */
+  -webkit-backdrop-filter: blur(10px); /* Frosted effect for Safari */
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .weather-main {
@@ -39,39 +55,48 @@ body {
   font-size: 48px;
   font-weight: bold;
   margin-right: 20px;
+  color: #ffffff; /* White text for better readability */
 }
 
 #description {
   text-transform: capitalize;
   font-size: 18px;
   font-weight: 700;
+  color: #ffffff;
 }
 
 #details {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+  color: #ffffff;
 }
 
 #details span {
   font-size: 20px;
   font-weight: 700;
+  color: #ffffff;
 }
 
+/* Neomorphism style for the input box */
 input {
-  padding: 8px;
+  padding: 12px;
   width: 80%;
   margin-bottom: 15px;
-  border: 2px solid #9ed2d2;
-  border-radius: 8px;
+  border-radius: 12px;
   font-size: 20px;
   font-weight: 700;
+  color: #201919;
+  background: #e0e0e0;
+  box-shadow: 8px 8px 15px #b8b9be, -8px -8px 15px #ffffff; /* Neomorphic shadow */
+  border: none;
+  outline: none;
 }
 
 button {
   padding: 8px 16px;
   background-color: #201919;
-  color: #fff;
+  color: #ffffff;
   border: none;
   border-radius: 8px;
   font-size: large;
@@ -85,15 +110,11 @@ button:hover {
 #icon {
   font-size: 50px;
   padding-right: 20px;
+  color: #ffffff;
 }
 
+/* Responsive adjustments */
 @media (max-width: 480px) {
-  body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
   .weather-app {
     padding: 15px;
     max-width: 80%;
@@ -128,7 +149,6 @@ button:hover {
     padding-right: 10px;
   }
 
-  
   .input-container {
     display: flex;
     flex-direction: column;
